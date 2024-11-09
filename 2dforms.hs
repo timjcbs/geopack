@@ -9,20 +9,7 @@
 --              edge length b,
 --              edge length c
 triangleArea :: Float -> Float -> Float -> Float
-triangleArea a b c
-    | a == b && b == c = equilateralArea a
-    | a == b || b == c || c == a = rightAngledArea a b c
-    | otherwise = generalArea a b c
-
-  where
-    equilateralArea s = sqrt 3 / 4 * s * s
-
-    rightAngledArea x y z
-      | x == y = x * z / 2
-      | y == z = y * x / 2
-      | otherwise = z * y / 2
-
-    generalArea x y z = sqrt (s * (s - x) * (s - y) * (s - z))
+triangleArea x y z = sqrt (s * (s - x) * (s - y) * (s - z))
       where
         s = (x + y + z) / 2
 
